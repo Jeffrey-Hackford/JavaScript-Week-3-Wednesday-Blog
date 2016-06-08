@@ -1,9 +1,11 @@
 <ul>
 {{#each model as |post|}}
-  <li>{{model.title}}</li><br>
-  <li>{{model.author}}</li><br>
-  <li>{{model.body}}</li><br>
+  <li>{{post.title}}</li><br>
+  <li>{{post.author}}</li><br>
+  <li>{{post.body}}</li><br>
 {{/each}}
 </ul>
 
 {{new-post save2="save3"}}
+
+{{update-post post=model update="update"}}
