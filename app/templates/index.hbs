@@ -1,11 +1,10 @@
 <ul>
 {{#each model as |post|}}
-  <li>{{post.title}}</li><br>
+
+  <li>{{#link-to 'post' post.id}}{{post.title}}{{/link-to}}</li><br>
   <li>{{post.author}}</li><br>
   <li>{{post.body}}</li><br>
 {{/each}}
 </ul>
 
-{{new-post save2="save3"}}
-
-{{update-post post=model update="update"}}
+{{new-post save2="save3"}}<br>

@@ -6,17 +6,14 @@ export default Ember.Component.extend({
     updatePostForm() {
       this.set('updatePostForm', true);
     },
-    save1() {
+    update(post) {
       var params = {
-        title: this.get('title') ? this.get('title') : "",
-        author: this.get('author') ? this.get('author') : "",
-        body: this.get('body') ? this.get('body') : ""
+        title: this.get('title'),
+        author: this.get('author'),
+        body: this.get('body'),
       };
       this.set('updatePostForm', false);
-      this.sendAction('save2', params);
-      this.set('title', "");
-      this.set('author', "");
-      this.set('body', "");
+      this.sendAction('update', post, params);
     }
   }
 });
